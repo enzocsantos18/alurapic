@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,6 +13,9 @@ const routes: Routes = [
   {
     path: 'p/add', component: PhotoFormComponent
   },
+  {
+    path: '**', component: NotFoundComponent
+  }
 ]
 
 @NgModule({
