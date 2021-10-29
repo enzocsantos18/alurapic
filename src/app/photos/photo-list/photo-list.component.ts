@@ -8,7 +8,7 @@ import { Photo } from './../photo/photo';
   selector: 'ap-photo-list',
   templateUrl: './photo-list.component.html'
 })
-export class PhotoListComponent implements OnInit {
+export class PhotoListComponent implements OnInit{
 
   photos: Photo[] = [];
 
