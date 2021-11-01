@@ -1,5 +1,5 @@
 import { PhotoService } from './../photo/photo.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import {debounceTime} from 'rxjs/operators'
@@ -10,7 +10,7 @@ import { Photo } from './../photo/photo';
   selector: 'ap-photo-list',
   templateUrl: './photo-list.component.html'
 })
-export class PhotoListComponent implements OnInit{
+export class PhotoListComponent implements OnInit, OnDestroy{
 
   filter: string = '';
   photos: Photo[] = [];
@@ -22,6 +22,7 @@ export class PhotoListComponent implements OnInit{
   constructor(private activatedRoute: ActivatedRoute, private photoService: PhotoService) {
 
   }
+
 
   ngOnInit(): void {
     this.username = this.activatedRoute.snapshot.params.userName;
@@ -39,6 +40,11 @@ export class PhotoListComponent implements OnInit{
 
     })
   }
+
+  ngOnDestroy(): void {
+    this.debounce.unsubscribe();
+  }
+
 
 
 }
