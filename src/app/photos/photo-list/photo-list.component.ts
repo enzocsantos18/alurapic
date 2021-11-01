@@ -10,6 +10,7 @@ import { Photo } from './../photo/photo';
 })
 export class PhotoListComponent implements OnInit{
 
+  filter: string = '';
   photos: Photo[] = [];
 
   constructor(private photoService: PhotoService, private activatedRoute: ActivatedRoute) {

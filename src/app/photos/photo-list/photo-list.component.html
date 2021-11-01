@@ -1,1 +1,13 @@
+<div class="text-center m-3">
+  <form>
+    <input
+      class="form-control rounded p-2"
+      type="search"
+      placeholder="search..."
+      (keyup)="filter = $event.target.value"
+    >
+  </form>
+</div>
+<p>{{filter}}</p>
+
 <ap-photos [photos]="photos"></ap-photos>
