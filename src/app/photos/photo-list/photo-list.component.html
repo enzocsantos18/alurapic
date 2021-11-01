@@ -8,6 +8,5 @@
     >
   </form>
 </div>
-<p>{{filter}}</p>
 
-<ap-photos [photos]="photos"></ap-photos>
+<ap-photos [photos]="photos | filterByDescription: filter"></ap-photos>
